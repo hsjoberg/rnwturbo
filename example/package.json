@@ -8,11 +8,14 @@
     "build:ios": "npm run mkdist && react-native bundle --entry-file index.js --platform ios --dev true --bundle-output dist/main.ios.jsbundle --assets-dest dist && react-native build-ios --scheme RnwturboExample --mode Debug --extra-params \"-sdk iphonesimulator CC=clang CPLUSPLUS=clang++ LD=clang LDPLUSPLUS=clang++ GCC_OPTIMIZATION_LEVEL=0 GCC_PRECOMPILE_PREFIX_HEADER=YES ASSETCATALOG_COMPILER_OPTIMIZATION=time DEBUG_INFORMATION_FORMAT=dwarf COMPILER_INDEX_STORE_ENABLE=NO\"",
     "ios": "react-native run-ios",
     "mkdist": "node -e \"require('node:fs').mkdirSync('dist', { recursive: true, mode: 0o755 })\"",
-    "start": "react-native start"
+    "start": "react-native start",
+    "windows": "npx @react-native-community/cli run-windows",
+    "test:windows": "jest --config jest.config.windows.js"
   },
   "dependencies": {
     "react": "18.3.1",
-    "react-native": "0.76.0-rc.1"
+    "react-native": "0.76.0-rc.1",
+    "react-native-windows": "0.0.0-canary.868"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -24,6 +27,7 @@
     "@react-native/babel-preset": "0.76.0-rc.1",
     "@react-native/metro-config": "0.76.0-rc.1",
     "@react-native/typescript-config": "0.76.0-rc.1",
+    "@rnx-kit/jest-preset": "^0.1.17",
     "@rnx-kit/metro-config": "^2.0.0",
     "react-native-builder-bob": "^0.30.2",
     "react-native-test-app": "^3.10.8"

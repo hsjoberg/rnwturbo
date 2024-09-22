@@ -190,11 +190,19 @@
     },
     "android": {
       "javaPackageName": "com.rnwturbo"
+    },
+    "windows": {
+      "namespace": "rnwturboCodegen",
+      "outputDirectory": "windows/rnwturbo/codegen",
+      "separateDataTypes": true
     }
   },
   "create-react-native-library": {
     "languages": "kotlin-objc",
     "type": "module-new",
     "version": "0.41.2"
+  },
+  "dependencies": {
+    "react-native-windows": "0.0.0-canary.868"
   }
 }
